@@ -1,0 +1,122 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Student data</li>
+  </ol>
+</nav>
+
+<div class="view-user p-5">
+  {{#each rows}}
+  <div class="row mb-5">
+    <div class="col text-center">
+      <h3>{{this.Username}} </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="row">{{this.Username}}</th>
+          </tr>
+          <tr>
+            <th scope="col">Email</th>
+            <td>{{this.Email}}</td>
+          </tr>
+          <tr>
+            <th scope="col">Phone</th>
+            <td>{{this.Phoneno}}</td>
+
+             </tr>
+          <tr>
+            <th scope="col">Admissionno</th>
+            <td>{{this.Admissionno}}</td>
+
+             </tr>
+          <tr>
+            <th scope="col">DOB</th>
+             <td>{{this.DOB}}</td>
+
+             </tr>
+          <tr>
+            <th scope="col">Gender</th>
+            <td>{{this.Gender}}</td>
+
+             </tr>
+          <tr>
+            <th scope="col">Religion</th>
+             <td>{{this.Religion}}</td>
+
+             </tr>
+          <tr>
+            <th scope="col">Aadhar</th>
+            <td>{{this.Aadhar}}</td>
+
+             </tr>
+          <tr>
+            <th scope="col">Address</th>
+            <td>{{this.Address}}</td>
+             </tr>
+          <tr>
+            <th scope="col">Department</th>
+             <td>{{this.Department}}</td>
+             </tr>
+          <tr>
+            <th scope="col">Mark</th>
+             <td>{{this.mark}}</td>
+             </tr>
+          <tr>
+            <th scope="col">Comment</th>
+            <td>{{this.comment}}</td>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+    </div>
+  </div>
+<br><br>
+    </tr>
+    <br><br>
+ <form action="/download" enctype="multipart/form-data" method="post">
+            <input type="file" name="image" accept='pdf/*' >
+            <input type="submit"  value="Download">
+        </form>  
+
+    <br><br>
+<form class="row g-3 needs-validation" method="POST" action="/studentmark" novalidate>
+  {{> updatestudentmark}}
+</form>
+    </tr>
+  {{/each}}
+</div>
+<style>
+  body{
+    background-color: white;
+  }
+  .row .col h3{
+    background-color: #00ccff;
+    color: white;
+  }
+  .row .col .table{
+    color: black;
+  }
+  
+    .btn{
+      background-color: #00ccff;
+      transition: 0.5s;
+      color: white;
+      font-size: 20px;
+    }
+    .btn:hover{
+      background-color: rgb(255, 7, 7);
+      transition: 0.5s;
+      color: white;
+      outline-color: none;
+      border-color: none;
+    }
+  
+</style>
